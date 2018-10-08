@@ -22,3 +22,4 @@ Hive为什么使用:
 	
 	
 centos7安装MySQL：https://blog.csdn.net/pengjunlee/article/details/81212250
+				  https://www.cnblogs.com/jorzy/p/8455519.html
