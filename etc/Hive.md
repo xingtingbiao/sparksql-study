@@ -19,3 +19,6 @@ Hive为什么使用:
 	简单、容易上手(提供类似SQL的查询语言HQL)
 	为超大数据集设计的计算/存储扩展能力(MR计算, HDFS存储)
 	统一的元数据管理(可与Presto/Impala/SparkSQL等共享数据)   ********重点*********
+	
+	
+centos7安装MySQL：https://blog.csdn.net/pengjunlee/article/details/81212250
