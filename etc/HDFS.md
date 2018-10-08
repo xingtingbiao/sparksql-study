@@ -25,7 +25,7 @@ Hadoop环境搭建
 	hostname: hadoop001
 	1) 修改主机名
 	2) 修改IP和hostname的映射关系：/etc/hosts
-		192.168.1.111 hadoop001
+		192.168.174.140 hadoop001
 	3) ssh 免密码登录
 		ssh-keygen -t rsa
 		cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
@@ -56,3 +56,22 @@ Hadoop环境搭建
 5) 格式化HDFS
 	注意: 这一步操作只在第一次执行, 此后无需再执行, 如果每次都格式化, 数据将被清空！
 	bin/hdfs namenode -format
+	
+6) 启动HDFS
+	sbin/start-dfs.sh
+	
+	验证是否成功: 
+		jps:
+			DataNode
+			NameNode
+			SecondaryNameNode
+		浏览器：
+			
+
+	
+7) 目录描述：
+	bin/: 客户端执行脚本
+	sbin/: 服务器端执行脚本
+	etc/: 相关配置文件
+	
+8) 停止HDFS服务
