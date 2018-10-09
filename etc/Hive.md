@@ -54,3 +54,20 @@ Hive 下载:
         <name>javax.jdo.option.ConnectionPassword</name>
         <value>root</value>
     </property>
+
+
+Hive基本使用
+	创建表
+		create table hive_wordcount(context string);
+	加载数据
+		LOAD DATA [LOCAL] INPATH 'filepath' [OVERWRITE] INTO TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)]
+		load data local inpath '/home/xingtb/data/hello.txt' into table hive_wordcount;
+
+		select word, count(1) from hive_wordcount lateral view explode(split(context, '\t')) wc AS word group by word;
+		lateral view explode(): 把每行记录按照指定分隔符进行拆解
+
+	hive sql 提交执行以后会生成mr作业, 并在yarn上运行
+
+简单案例
+	员工表和部门表的操作
+	
