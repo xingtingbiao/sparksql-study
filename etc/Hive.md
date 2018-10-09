@@ -23,3 +23,34 @@ Hive为什么使用:
 	
 centos7安装MySQL：https://blog.csdn.net/pengjunlee/article/details/81212250
 				  https://www.cnblogs.com/jorzy/p/8455519.html
+
+Hive 下载:
+	wget http://archive.cloudera.com/cdh5/cdh/5/hive-1.1.0-cdh5.7.0.tar.gz
+	解压: tar -xzvf hive-1.1.0-cdh5.7.0.tar.gz -C ~/app/
+
+配置
+1) 设置系统环境变量: 
+	export HIVE_HOME=/home/xingtb/app/hive-1.1.0-cdh5.7.0
+    export PATH=$HIVE_HOME/bin:$PATH
+
+    新建hive-site.xml
+
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://localhost/sparksql?createDatabaseIfNotExist=true</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>root</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>root</value>
+    </property>
