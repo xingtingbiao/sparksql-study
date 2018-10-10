@@ -70,4 +70,21 @@ Hive基本使用
 
 简单案例
 	员工表和部门表的操作
-	
+	create table emp(
+		empno int,
+		ename string,
+		job string,
+		mgr string,
+		hiredate string,
+		sal double,
+		comm double,
+		deptno int
+	) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+
+
+
+	create table dept(
+		deptno int,
+		dname string,
+		location string
+	) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
