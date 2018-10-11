@@ -30,3 +30,10 @@ MapReduce局限性
 
 Spark对比Hadoop: BDAS
 	BDAS: Berkeley Data Analytics Stack
+
+
+
+
+Spark实战环境搭建
+1) Spark源码编译
+2) Spark环境搭建
