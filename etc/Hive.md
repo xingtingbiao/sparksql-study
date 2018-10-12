@@ -70,21 +70,12 @@ Hive基本使用
 
 简单案例
 	员工表和部门表的操作
-	create table emp(
-		empno int,
-		ename string,
-		job string,
-		mgr string,
-		hiredate string,
-		sal double,
-		comm double,
-		deptno int
-	) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+	create table emp(empno int, ename string, job string, mgr string, hiredate string, sal double, comm double, deptno int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+	create table dept(deptno int, dname string, location string) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
 
+	load data local inpath '/home/xingtb/data/emp.txt' into table emp;
+	load data local inpath '/home/xingtb/data/dept.txt' into table dept;
+	
 
-
-	create table dept(
-		deptno int,
-		dname string,
-		location string
-	) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+	求每个部门的人数
+	select deptno, count(1) from emp group deptno;
