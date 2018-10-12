@@ -60,3 +60,40 @@ cdh需要depen repos 可以在pom中尝试添加
 </repository>
 
 网络不好的话可以使用VPN
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Spark Standalone模式的架构和Hadoop HDFS/YARN很类似
+1 master + n worker
+
+spark-env.sh配置: 
+SPARK_MASTER_HOST=hadoop001
+SPARK_WORKER_CORES=2
+SPARK_WORKER_MEMORY=2g
+SPARK_WORKER_INSTANCES=1
+
+hadoop1 : master
+hadoop2 : worker
+hadoop3 : worker
+hadoop4 : worker
+...
+hadoop10 : worker
+
+slaves:
+hadoop2
+hadoop3
+hadoop4
+...
+hadoop10
+
+==> start-all.sh  会在hadoop1机器上启动master进程, 在slaves文件配置的所有hostname机器上启动worker进程
+
+
+
+Spark简单使用
+val file = spark.sparkContext.textFile("file:///home/xingtb/data/wc.txt")
+val wordCounts = file.flatMap(line => line.split(",")).map(word => (word, 1)).reduceByKey(_ + _)
+wordCounts.collect
+
+scala> wordCounts.collect
+res0: Array[(String, Int)] = Array((hello,3), (welcome,1), (world,2))
