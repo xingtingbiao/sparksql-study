@@ -78,6 +78,12 @@ Spark SQL概述小结:
 
 
 
+4.Spark SQL愿景：
+	Write less code
+	Read less data
+	Let zhe optimizer do zhe hard work
+
+
 
 
 
