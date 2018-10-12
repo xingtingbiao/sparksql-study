@@ -4,6 +4,9 @@ package com.demo.spark
  * Hello world!
  *
  */
-object App extends Application {
-  println( "Hello World!" )
+object App {
+
+  def main(args: Array[String]): Unit = {
+    println("Hello World!")
+  }
 }
