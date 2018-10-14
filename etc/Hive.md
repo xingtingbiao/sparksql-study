@@ -78,4 +78,4 @@ Hive基本使用
 	
 
 	求每个部门的人数
-	select deptno, count(1) from emp group deptno;
+	select deptno, count(1) from emp group by deptno;

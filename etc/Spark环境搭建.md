@@ -41,6 +41,7 @@ mvn编译命令:
 
 
 ./build/mvn -Pyarn -Phadoop-2.6 -Dhadoop.version=2.6.0-cdh5.7.0 -Phive -Phive-thriftserver -DskipTests clean package
+mvn -Pyarn -Phadoop-2.6 -Dhadoop.version=2.6.0-cdh5.7.0 -Phive -Phive-thriftserver -DskipTests clean package -X
 
 Building a Runnable Distribution(编译可运行的包):
 推荐使用:
@@ -91,6 +92,7 @@ hadoop10
 
 
 Spark简单使用
+spark-shell --master local[2]
 val file = spark.sparkContext.textFile("file:///home/xingtb/data/wc.txt")
 val wordCounts = file.flatMap(line => line.split(",")).map(word => (word, 1)).reduceByKey(_ + _)
 wordCounts.collect
