@@ -26,6 +26,17 @@ object DataFrameApp {
     // select age ,count(1) from table group by age
     frame.groupBy("age").count().show()
 
+    /**
+      * {{{
+      *   // Selects the age of the oldest employee and the aggregate expense for each department
+      *   df.groupBy("department").agg(Map(
+      *     "age" -> "max",
+      *     "expense" -> "sum"
+      *   ))
+      * }}}
+      */
+    // frame.groupBy("age").agg(Map("" -> ""))
+
     spark.stop()
   }
 
