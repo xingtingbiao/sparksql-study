@@ -72,4 +72,42 @@ ExternalDataSourceAPI: 外部数据源API操作
 
 
 
+6.操作MySQL表数据:
+
+http://spark.apache.org/docs/latest/sql-programming-guide.html#jdbc-to-other-databases
+
+val jdbcDF = spark.read
+  .format("jdbc")
+  .option("url", "jdbc:postgresql:dbserver")
+  .option("dbtable", "schema.tablename")
+  .option("user", "username")
+  .option("password", "password")
+  .load()
+
+  val jdbcDF = spark.read
+  .format("jdbc")
+  .options(Map("url" -> "jdbc:mysql://localhost:3306/sparksql?user=root&password=root", 
+  "dbtable" -> "TBLS", "driver" -> "com.mysql.jdbc.Driver"))
+  .load()
+
+  spark.read.format("jdbc").options(Map("url" -> "jdbc:mysql://localhost:3306/sparksql?user=root&password=root", "dbtable" -> "TBLS", "driver" -> "com.mysql.jdbc.Driver")).load()
+
+
+  jdbcDF.write
+  .format("jdbc")
+  .option("url", "jdbc:postgresql:dbserver")
+  .option("dbtable", "schema.tablename")
+  .option("user", "username")
+  .option("password", "password")
+  .save()
+
+
+
+
+7.综合使用:
+	关联MySQL和Hive表数据关联查询
+	分别加载(load)MySQL数据源和Hive数据源, 然后通过两个DataFrame进行join：
+	// join API
+    frame.join(frame2, frame("id") === frame2("id")).show()
+
 
