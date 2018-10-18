@@ -1,6 +1,5 @@
 package com.demo.spark.dataframe
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
 
 /**
@@ -12,7 +11,6 @@ object HiveTableApp {
     val spark = SparkSession.builder().appName("HiveTableApp").master("local[2]").getOrCreate()
     //spark-shell运行
     spark.table("emp").show()
-    RDD
 
     spark.sqlContext.getConf("spark.sql.shuffle.partitions", "10")
 
