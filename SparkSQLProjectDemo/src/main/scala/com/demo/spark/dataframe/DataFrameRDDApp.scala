@@ -17,6 +17,10 @@ object DataFrameRDDApp {
     spark.stop()
   }
 
+  /**
+    * 通过case class反射的机制转换
+    * @param spark
+    */
   private def inferReflection(spark: SparkSession): Unit = {
     val rdd = spark.sparkContext.textFile("people.txt")
     import spark.implicits._
@@ -28,6 +32,10 @@ object DataFrameRDDApp {
     //    spark.sql("select * from table").show()
   }
 
+  /**
+    * 通过编程的方式转换
+    * @param spark
+    */
   private def program(spark: SparkSession): Unit = {
     val rdd = spark.sparkContext.textFile("people.txt")
     val infoRDD = rdd.map(_.split(",")).map(line => Row(line(0).toInt, line(1), line(2).toInt))

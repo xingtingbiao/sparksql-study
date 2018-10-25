@@ -3,7 +3,7 @@ package com.demo.spark.dataframe
 import org.apache.spark.sql.SparkSession
 
 /**
-  * DataFrame API 案例操作
+  * DataFrame API 案例操作 RDD转换成DataFrame
   */
 object DataFrameCase {
 
