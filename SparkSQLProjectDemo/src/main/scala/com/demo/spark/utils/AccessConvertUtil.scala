@@ -39,7 +39,7 @@ object AccessConvertUtil {
       }
       val flow = splits(2).toLong
       val ip = splits(3)
-      val city = ""
+      val city = IpUtils.getCity(ip)
       val time = splits(0)
       val day = splits(0).substring(0, 10).replaceAll("-", "")
       Row(url, cmsType, cmsId, flow, ip, city, time, day)
