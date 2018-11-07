@@ -1,7 +1,5 @@
 package com.demo.spark.utils
 
-import com.ggstar.util.ip.IpHelper
-
 /**
   * ip解析的工具类
   */

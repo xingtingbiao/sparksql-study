@@ -9,8 +9,12 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
 object SparkStatCleanJob {
 
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("SparkStatCleanJob").master("local[2]").getOrCreate()
-    val rdd = spark.sparkContext.textFile("../../testResource/access.log")
+    val spark = SparkSession.builder().master("local[2]").appName("SparkStatCleanJob")
+      // .master("local[2]")
+      .getOrCreate()
+    val rdd = spark.sparkContext.textFile("/home/xingtb/lib/access.log")
+
+    // val rdd = spark.sparkContext.textFile("../../testResource/access.log")
     // rdd.take(10).foreach(println)
     // rdd ==> DF
     val row = rdd.map(line => AccessConvertUtil.parseLog(line))

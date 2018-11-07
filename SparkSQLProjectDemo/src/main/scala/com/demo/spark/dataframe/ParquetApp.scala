@@ -11,10 +11,12 @@ object ParquetApp {
     val spark = SparkSession.builder().master("local[2]").appName("ParquetApp").getOrCreate()
     val frame = spark.read.format("parquet").load("users.parquet")
     val frame2 = spark.read.format("parquet").option("path", "users.parquet").load()
+    val frame3 = spark.read.format("parquet").load("../../testResource/access-snappy.parquet")
 
     frame.printSchema()
     frame.show()
     frame2.show()
+    frame3.show()
 
     // frame.select("name", "favorite_color").write.format("json").save()
 
