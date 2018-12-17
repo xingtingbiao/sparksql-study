@@ -30,7 +30,7 @@
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
-      <!--<scope>provided</scope>-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -49,19 +49,19 @@
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_2.11</artifactId>
       <version>${spark.version}</version>
-      <!--<scope>provided</scope>-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-hive_2.11</artifactId>
       <version>${spark.version}</version>
-      <!--<scope>provided</scope>-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.spark-project.hive</groupId>
       <artifactId>hive-jdbc</artifactId>
       <version>1.2.1.spark2</version>
-      <!--<scope>provided</scope>-->
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -167,4 +167,46 @@
       </plugin>
     </plugins>
   </reporting>
+
+  <!-- This profile helps to make things run out of the box in IntelliJ -->
+  <!-- Its adds Flink's core classes to the runtime class path. -->
+  <!-- Otherwise they are missing in IntelliJ, because the dependency is 'provided' -->
+  <profiles>
+    <profile>
+      <id>add-dependencies-for-IDEA</id>
+      <activation>
+        <!--<activeByDefault>true</activeByDefault>-->
+        <property>
+          <name>idea.version</name>
+        </property>
+      </activation>
+
+      <dependencies>
+        <dependency>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+          <version>${scala.version}</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-sql_2.11</artifactId>
+          <version>${spark.version}</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-hive_2.11</artifactId>
+          <version>${spark.version}</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.spark-project.hive</groupId>
+          <artifactId>hive-jdbc</artifactId>
+          <version>1.2.1.spark2</version>
+          <scope>compile</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
 </project>
