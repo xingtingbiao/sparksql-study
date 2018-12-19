@@ -11,9 +11,11 @@ object MySqlUtil {
     * 获取数据库连接
     */
   def getConnection: Connection = {
-    DriverManager.getConnection(
-      "jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf8"
-      , "admin", "admin")
+    // val URL = "jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf8"
+    val URL = "jdbc:mysql://192.168.111.129:3306/test?useUnicode=true&characterEncoding=utf8"
+    val USERNAME = "admin"
+    val PASSWORD = "admin"
+    DriverManager.getConnection(URL, USERNAME, PASSWORD)
   }
 
   /**
