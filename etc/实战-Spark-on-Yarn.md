@@ -82,3 +82,15 @@ spark-submit --class com.demo.spark.log.SparkStatCleanJobYARN \
 --queue thequeue \
 /home/xingtb/lib/sql-1.0-jar-with-dependencies.jar \
 hdfs://hadoop001:8020/spark/input/* hdfs://hadoop001:8020/spark/clean
+
+
+spark-submit --class com.demo.spark.log.TopNStatJobYARN \
+--master yarn \
+--name TopNStatJobYARN \
+--deploy-mode cluster \
+--driver-memory 2g \
+--executor-memory 1g \
+--executor-cores 1 \
+--queue thequeue \
+/home/xingtb/lib/sql-1.0-jar-with-dependencies.jar \
+hdfs://hadoop001:8020/spark/clean/ 20170511
