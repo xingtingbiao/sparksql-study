@@ -65,7 +65,7 @@ Hadoop环境搭建
 			DataNode
 			NameNode
 			SecondaryNameNode
-		浏览器：
+		浏览器：hadoop001:50070
 			
 
 	
