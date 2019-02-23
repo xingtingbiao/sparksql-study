@@ -33,7 +33,11 @@ Hive 下载:
 	export HIVE_HOME=/home/xingtb/app/hive-1.1.0-cdh5.7.0
     export PATH=$HIVE_HOME/bin:$PATH
 
-    新建hive-site.xml
+    1. cp conf/hive-env.sh.template conf/hive-env.sh
+       vim hive-env.sh
+       HADOOP_HOME=home/xingtb/app/hadoop-2.6.0-cdh5.7.0
+
+    2. 新建hive-site.xml
 
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
