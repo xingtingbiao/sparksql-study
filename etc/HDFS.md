@@ -23,7 +23,7 @@ Hadoop环境搭建
 
 3) 机器参数设置
 	hostname: hadoop001
-	1) 修改主机名
+	1) 修改主机名  shell: hostnamectl set-hostname hadoop001
 	2) 修改IP和hostname的映射关系：/etc/hosts
 		192.168.174.140 hadoop001
 	3) ssh 免密码登录
