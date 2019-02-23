@@ -39,6 +39,7 @@ Hive 下载:
 
     2. 新建hive-site.xml
 
+<configuration>
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
         <value>jdbc:mysql://localhost/sparksql?createDatabaseIfNotExist=true</value>
@@ -58,6 +59,7 @@ Hive 下载:
         <name>javax.jdo.option.ConnectionPassword</name>
         <value>root</value>
     </property>
+</configuration>
 
 需要将mysql-connector-java-5.1.38.jar驱动包拷贝到hive-1.1.0-cdh5.7.0/lib下
 
