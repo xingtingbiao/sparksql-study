@@ -55,6 +55,7 @@ Hive 下载:
         <value>root</value>
     </property>
 
+需要将mysql-connector-java-5.1.38.jar驱动包拷贝到hive-1.1.0-cdh5.7.0/lib下
 
 Hive基本使用
 	创建表
