@@ -52,6 +52,9 @@ Hadoop环境搭建
 			<name>dfs.replication</name>
 			<value>1</value>
 		</property>
+
+	vim slaves
+	    hadoop001
 		
 5) 格式化HDFS
 	注意: 这一步操作只在第一次执行, 此后无需再执行, 如果每次都格式化, 数据将被清空！
