@@ -42,7 +42,7 @@ Hive 下载:
 <configuration>
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:mysql://localhost/sparksql?createDatabaseIfNotExist=true</value>
+        <value>jdbc:mysql://localhost:3306/sparksql?createDatabaseIfNotExist=true</value>
     </property>
 
     <property>
