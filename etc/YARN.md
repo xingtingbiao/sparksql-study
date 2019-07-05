@@ -38,13 +38,13 @@ YARN执行流程
 YARN环境搭建
 1) mapred-site.xml
 	<property>
-        <name>mapreduce.framework.name</name>
-        <value>yarn</value>
-    </property>
-2) yarn-site.xml
-	<property>
         <name>yarn.nodemanager.aux-services</name>
         <value>mapreduce_shuffle</value>
+    </property>
+2) yarn-site.xml
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
     </property>
 
 
